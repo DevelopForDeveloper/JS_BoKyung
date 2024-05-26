@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: yellow;
+    padding: 1rem;
+    border-radius: .5rem;
+    width: 700px;
+    max-width:90%;
+}
+
+.buttons_container {
+    position: absolute;
+    bottom: 4rem;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.title {
+    position: absolute;
+    top: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
