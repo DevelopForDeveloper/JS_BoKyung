@@ -6,22 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>Document</title>
+    <title>TodoList</title>
 </head>
 <body>
     <div class="title" id="todolist_title">TodoList</div>
     <div class="container">
-        <li>hello</li>
-        <li>hello</li>
-        <li>hello</li>
-        <li>hello</li>
-        <li>hello</li>
+        <ul id= "lists"></ul>
     </div>
     <div class="buttons_container">
-        <button>add</button>
-        <button>delete</button>
-        <button>modify</button>
-        <button>allclear</button>
+        <button id= "button_add" onclick="addSomeTodoList()">add</button>
+        <button id= "button_delete" onclick="deleteTargetTodoList()">delete</button>
+        <button id= "button_modify" onclick="modifyTargetTodoList()">modify</button>
+        <button id= "button_allClear" onclick="allClearTodoList()">allclear</button>
     </div>
 </body>
 </html>

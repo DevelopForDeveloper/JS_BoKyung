@@ -9,6 +9,21 @@ body {
     min-height: 100vh;
 }
 
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+li {
+    background-color: aqua;
+    border-radius: .5rem;
+    border-color: brown;
+    border-width: 0.15rem;
+    border-style: solid;
+    padding: 1rem;
+    margin: 1rem;
+}
+
 .container {
     background-color: yellow;
     padding: 1rem;
@@ -30,4 +45,3 @@ body {
     font-size: 3rem;
     font-weight: bold;
 }
-
