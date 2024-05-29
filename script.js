@@ -1,54 +1,50 @@
-
-
-// 전역변수사용은 가급적 피하기 
-const list = document.getElementById("lists");
-
-// es6부터는 function대시 화살표함수를 사용해요 
 const addSomeTodoList = () => {
-    // 암묵적 전역변수 피하기 
-    // test라는 이름은 명확히 의도를 알수없어서 피하기 
-    // test = window.prompt("入力してください", "");
-    const inputText = window.prompt("입력해 주세요", "");
-    if (inputText !== null) {
-        // var 사용은 권장하지않음. scope와 호이스팅에 대해 알아보시면 이유를 알수있어요 
-        //  var addList = document.createElement("li");
-        const list = document.querySelector("#todoList");  // 예시로 #todoList라는 id를 가진 요소를 선택
-        //  var children = list.children.length + 1
-        const newItem = document.createElement("li");
+    // 'ul' 요소를 선택합니다.
+    // 함수가 호출될때마다 기존의 list를 불러오기때문에 새로운 리스트를 만들지안항도 ok
+    const list = document.querySelector('ul');
+    // 해당코드를 작성하면 매번 list_item배열이 초기화되는 현상이 발생해요 
+    // const list_items = []
+    console.log({ list })
+    // 사용자에게 입력을 받는 창을 표시합니다.
+    const input = window.prompt('入力してください', '');
 
-        // setAttribute를 사용할때 문자열 연결 대신 템플릿 레터렁 사용하기 
-        // 템플릿 레터럴을 사용하는게 좀 더 가독성이 좋아요 
-        // addList.setAttribute("id", "element" + children);
-        // 입력받은 텍스트를 새로운 목록 항목에 추가합니다.
-        // createTextNode와 appendChild 대신 textContent를 사용하여 간결하게 텍스트를 추가할 수 있어요
-        newItem.textContent = inputText;  // createTextNode와 appendChild 대신 textContent 사용
-        const newId = `element${list.children.length + 1}`;
-        newItem.id = newId;
-        list.appendChild(newItem);
+    // !input 이면 null, undefined, ''을 모두 커버할수있어요 
+    // if안에 동작을 넣는것보다 에러패턴을 먼저 작성하는 얼리패턴이 개인 취향이지만 최근에 많이 사용되고있어요 
+    // 얼리리턴패턴을 사용하는 가장 큰 이유는 가독성을 높일 수 있어요 
+    if (!input) {
+        alert('태스크를 입력해주세요');
+        return;
     }
+    // 새로운 목록 항목(li 요소)을 생성합니다.
+    const addList = document.createElement('li');
+    // 입력받은 텍스트를 새로운 목록 항목에 추가합니다.
+    addList.textContent = input;
+
+    // 불필요한 forEach 사용: list_items 배열에 하나의 요소만 추가된 후 즉시 반복문을 사용하므로, 실제로 반복문의 필요없어보여요
+    // list_items.forEach(function (contents, index) {
+
+    // id는 index같은걸 쓰는걸 기본 권장하지않아요. 여기선 간단히 데이트로 만들었는데 
+    // 일반적으론 uuid를 많이 사용해요 (여러 모듈 제공함)
+    // 그리고 +1 이런방식보다 요샌  템플릿 리터럴: 문자열 연결 시 + 대신 `${}`를 사용하여 가독성을 높이는 편이에요 
+    const newId = `element${Date.now()}`;
+    //  addList.setAttribute('id', 'element' + (index + 1));
+    addList.setAttribute('id', newId);
+
+    // 새로운 항목을 목록에 추가합니다.
+    list.appendChild(addList);
+
 }
 
 
-// ES6 문법을 사용한 리팩토링 포인트:
-// 1. var 대신 const와 let 사용: var는 변수의 유효 범위와 호이스팅 문제를 일으킬 수 있어서 사용을 권장하지않음 
-// const는 불변할때, let은 다른데서 수정이 가능할때 사용 
-// 2. 템플릿 리터럴: 문자열 연결 시 + 대신 `${}`를 사용하여 가독성을 높입니다.
-// 3. 화살표 함수: function 키워드 대신 화살표 함수를 사용하여 코드의 일관성과 간결성을 유지합니다.
-//  최근 es6에서는 function대신 화살표함수를 많이 사용하고있어요. 자세한건 찾아보세용~. 가독성 측면에도 권장합니다. 
-// 4. 전역 변수 사용 최소화: 전역 변수를 줄이고, 필요한 경우 함수 내부에서 변수를 선언합니다.
-// 기본적으로 사용하는 위치와 가장 가까운데서 변수를 선언하는게 나중에 디버깅하기편해요
-// 5. 명확한 변수명: 변수명은 그 용도를 명확하게 나타내도록 선택합니다.
+const deleteTargetTodoList = () => {
+    /*選択したリストを削除する、該当リストを選択し、削除確認画面を出す、Yes->削除、No→そのまま*/
+}
 
-// 화살표함수로 바꾸기 
-function deleteTargetTodoList() {
+const modifyTargetTodoList = () => {
     /*TODO*/
 }
 
-function modifyTargetTodoList() {
-    /*TODO*/
-}
-
-function allClearTodoList() {
+const allClearTodoList = () => {
     while (list.hasChildNodes) {
         list.removeChild(list.firstChild);
     }
