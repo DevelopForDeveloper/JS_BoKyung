@@ -24,6 +24,10 @@ li {
     margin: 1rem;
 }
 
+li:hover {
+    background-color: green;
+}
+
 .container {
     background-color: yellow;
     padding: 1rem;
