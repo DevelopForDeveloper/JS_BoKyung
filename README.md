@@ -8,3 +8,6 @@
 # Restudy
 - [ ] ListのChild、Node의 관계성
 - [ ] CSS...
+
+# PR List
+-  [1차 리팩토링 리뷰 by @woori](https://github.com/DevelopForDeveloper/JS_BoKyung/pull/5/commits/482c34b6542b4a99cb6cb5a406c1d9ee8a1042d4)
