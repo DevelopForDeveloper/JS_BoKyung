@@ -1,11 +1,10 @@
 # JS_BoKyung
 # TODO
-- [ ] deleteTargetTodoList関数とmodifyTargetTodoListを実装する
-- [ ] 特定Listを削除するとidが再設定できるように
-- [ ] 各TodoListを保存する（sessionStorageかlocalStoregeか）
-- [ ] VanilaJSの形式であっているのか確認
-- [ ] CSSの整理
-- [ ] ディレクトリの整理
+- [ ] 각TodoList를 저장하기（sessionStorage이나localStorege를 사용）
+- [ ] VanilaJS형식인지 확인
+- [ ] CSS정리
+- [ ] 디렉토리 정리
 
 # Restudy
-- [ ] ListのChild、Nodeの関係性
+- [ ] ListのChild、Node의 관계성
+- [ ] CSS...
