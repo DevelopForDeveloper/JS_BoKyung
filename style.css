@@ -3,10 +3,40 @@
 }
 
 body {
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+}
+
+.buttons_container {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top:1rem;
+    padding-right: 1rem;
+    border-radius: .5rem;
+}
+
+.buttons_container button {
+    font-size: 18px;
+    padding: .5rem .6rem;
+    margin: .25rem;
+    border-radius: .25rem;
+    border-width: 0;
+}
+
+.buttons_container #button_add {
+    background-color:blanchedalmond;
+}
+
+.container {
+    padding: 1rem;
+    border-radius: .5rem;
+    width: 50%;
+    max-width:90%;
 }
 
 ul {
@@ -15,36 +45,18 @@ ul {
 }
 
 li {
-    background-color: aqua;
+    background-color:blanchedalmond;
+    border-bottom: .15rem solid #ccc;
     border-radius: .5rem;
-    border-color: brown;
-    border-width: 0.15rem;
-    border-style: solid;
     padding: 1rem;
-    margin: 1rem;
+    margin: .25rem;
 }
 
 li:hover {
-    background-color: green;
-}
-
-.container {
-    background-color: yellow;
-    padding: 1rem;
-    border-radius: .5rem;
-    width: 700px;
-    max-width:90%;
-}
-
-.buttons_container {
-    position: absolute;
-    bottom: 4rem;
-    padding: 1rem;
-    border-radius: .5rem;
+    color:darkgray;
 }
 
 .title {
-    position: absolute;
     top: 2rem;
     font-size: 3rem;
     font-weight: bold;
