@@ -108,6 +108,9 @@ const loadTodoList = () => {
 const renderTodoList = () => {
   const lists = document.querySelector("ul");
 
+  // 기존의 리스트 제거(list가 늘어날때 2배가 되는 경우 방지, 초기화)
+  lists.innerHTML = '';
+
   const savedTodoList = loadTodoList();
 
   savedTodoList.forEach(list => {
